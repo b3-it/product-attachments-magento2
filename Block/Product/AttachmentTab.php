@@ -75,9 +75,9 @@ class AttachmentTab extends Template implements IdentityInterface
     }
 
     /**
-     * @return ProductInterface
+     * @return ProductInterface|null
      */
-    public function getProduct(): ProductInterface
+    public function getProduct(): ?ProductInterface
     {
         return $this->registry->registry('current_product');
     }

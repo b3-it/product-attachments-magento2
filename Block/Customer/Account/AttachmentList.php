@@ -42,7 +42,7 @@ class AttachmentList extends Template
     private $settings;
 
     /**
-     * @var Collection
+     * @var Collection|null
      */
     private $collection;
 
@@ -95,9 +95,9 @@ class AttachmentList extends Template
     }
 
     /**
-     * @return Collection
+     * @return Collection|null
      */
-    public function getAttachments() : Collection
+    public function getAttachments() : ?Collection
     {
         $customer = $this->currentCustomer->getCustomer();
 

@@ -59,8 +59,8 @@ class Collection extends AbstractCollection
         ManagerInterface $eventManager,
         MetadataPool $metadataPool,
         LoggerInterface $logger,
-        AdapterInterface $connection = null,
-        AbstractDb $resource = null
+        ?AdapterInterface $connection = null,
+        ?AbstractDb $resource = null
     ) {
         parent::__construct(
             $entityFactory,

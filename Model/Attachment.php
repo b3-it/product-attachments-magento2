@@ -226,7 +226,7 @@ class Attachment extends AbstractExtensibleModel implements AttachmentInterface,
      * @param ContentInterface $attachmentFileContent
      * @return AttachmentInterface
      */
-    public function setAttachmentFileContent(ContentInterface $attachmentFileContent = null) : AttachmentInterface
+    public function setAttachmentFileContent(?ContentInterface $attachmentFileContent = null) : AttachmentInterface
     {
         return $this->setData(self::ATTACHMENT_FILE_CONTENT, $attachmentFileContent);
     }

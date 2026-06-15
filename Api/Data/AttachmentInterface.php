@@ -104,7 +104,7 @@ interface AttachmentInterface extends ExtensibleDataInterface
      *
      * @return \LizardMedia\ProductAttachment\Api\Data\AttachmentInterface
      */
-    public function setAttachmentFileContent(ContentInterface $attachmentFileContent = null) : AttachmentInterface;
+    public function setAttachmentFileContent(?ContentInterface $attachmentFileContent = null) : AttachmentInterface;
 
 
     /**

@@ -63,8 +63,7 @@ class Preview extends Action
         $attachment = $this->loadAttachmentById((int) $attachmentId);
         if ($attachment instanceof AttachmentInterface) {
             try {
-                $this->downloadProcessor->processDownload($attachment);
-                return $this->_response;
+                return $this->downloadProcessor->processDownload($attachment);
             } catch (FileSystemException $exception) {
                 $this->messageManager->addErrorMessage(__('Sorry, there was an error getting requested content.'));
             }

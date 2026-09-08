@@ -15,6 +15,7 @@ use Exception;
 use LizardMedia\ProductAttachment\Api\Data\AttachmentInterface;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\App\Response\Http\FileFactory;
+use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\Filesystem\Io\File;
 
@@ -57,14 +58,14 @@ class DownloadProcessor
 
     /**
      * @param AttachmentInterface $attachment
-     * @return void
+     * @return ResponseInterface
      * @throws FileSystemException
      */
-    public function processDownload(AttachmentInterface $attachment): void
+    public function processDownload(AttachmentInterface $attachment): ResponseInterface
     {
         try {
             $name = basename($this->downloadResourceResolver->resolveResource($attachment));
-            $this->fileFactory->create(
+            return $this->fileFactory->create(
                 $name,
                 [
                     'type' => 'string',

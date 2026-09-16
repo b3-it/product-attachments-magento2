@@ -212,6 +212,7 @@ class Attachments extends AbstractModifier
             'formElement' => Container::NAME,
             'component' => 'Magento_Ui/js/form/components/group',
             'label' => __('Title'),
+            'showLabel' => false,
             'dataScope' => '',
         ];
 
@@ -220,6 +221,7 @@ class Attachments extends AbstractModifier
             'componentType' => Form\Field::NAME,
             'dataType' => Form\Element\DataType\Text::NAME,
             'dataScope' => 'title',
+            'labelVisible' => false,
             'validation' => [
                 'required-entry' => true,
             ],
@@ -238,6 +240,7 @@ class Attachments extends AbstractModifier
             'formElement' => Container::NAME,
             'component' => 'Magento_Ui/js/form/components/group',
             'label' => __('File'),
+            'showLabel' => false,
             'dataScope' => '',
         ];
 
@@ -250,6 +253,7 @@ class Attachments extends AbstractModifier
             'options' => $this->typeUpload->toOptionArray(),
             'typeFile' => 'attachment_file',
             'typeUrl' => 'attachment_url',
+            'labelVisible' => false,
         ];
 
         $attachmentUrl['arguments']['data']['config'] = [

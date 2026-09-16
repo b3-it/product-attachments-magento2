@@ -8,36 +8,20 @@
 'use strict';
 
 define([
-    'jquery',
-    'underscore',
     'Magento_Downloadable/js/components/file-uploader'
-], function ($, _, Component) {
+], function (Component) {
     return Component.extend({
         /**
-         * @param {HTMLInputElement} fileInput
-         * @returns {FileUploader} Chainable.
-         */
-        initUploader: function (fileInput) {
-            this._super();
-            this.$fileInput = fileInput;
-
-            //We only add one more callback, other
-            //are set up in vendor/magento/module-ui/view/base/web/js/form/element/file-uploader.js
-            _.extend(this.uploaderConfig, {
-                fail: this.onFail.bind(this)
-            });
-
-            $(fileInput).fileupload(this.uploaderConfig);
-
-            return this;
-        },
-
-        /**
+         * Since Magento 2.4.8 the uploader is set up by the parent component on
+         * top of Uppy. The jQuery-File-Upload plugin this component used to
+         * initialize here does not ship with Magento any more, so initUploader
+         * is left to the parent implementation.
+         *
          * @param {Event} event
          * @param {Object} data
          * @return {VoidFunction}
          */
-        onFail: function(event, data) {
+        onFail: function (event, data) {
             console.error(data.jqXHR.responseText);
             console.error(data.jqXHR.status);
         },
